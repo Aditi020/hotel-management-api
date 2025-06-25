@@ -6,7 +6,6 @@ import com.management.hotel.entity.Room;
 import com.management.hotel.exception.OurException;
 import com.management.hotel.repo.BookingRepository;
 import com.management.hotel.repo.RoomRepository;
-import com.management.hotel.service.AwsS3Service;
 import com.management.hotel.service.interfac.IRoomService;
 import com.management.hotel.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +22,20 @@ public class RoomService implements IRoomService {
 
     @Autowired
     private RoomRepository roomRepository;
+
     @Autowired
     private BookingRepository bookingRepository;
-    @Autowired
-//    private AwsS3Service awsS3Service;
+
+    // Commented out AWS service
+    // @Autowired
+    // private AwsS3Service awsS3Service;
 
     @Override
     public Response addNewRoom(MultipartFile photo, String roomType, BigDecimal roomPrice, String description) {
         Response response = new Response();
         try {
-//            String imageUrl = awsS3Service.saveImageToS3(photo);
-            String imageUrl = "https://dummyimage.com/room.jpg"; // temp placeholder for imageurl
+            // Replace AWS logic with a placeholder URL
+            String imageUrl = "https://via.placeholder.com/300";
 
             Room room = new Room();
             room.setRoomPhotoUrl(imageUrl);
@@ -95,15 +97,15 @@ public class RoomService implements IRoomService {
     public Response updateRoom(Long roomId, String description, String roomType, BigDecimal roomPrice, MultipartFile photo) {
         Response response = new Response();
         try {
-            String imageUrl = null;
-            if (photo != null && !photo.isEmpty()) {
-                imageUrl = awsS3Service.saveImageToS3(photo);
-            }
             Room room = roomRepository.findById(roomId).orElseThrow(() -> new OurException("Room Not Found"));
             if (roomType != null) room.setRoomType(roomType);
             if (roomPrice != null) room.setRoomPrice(roomPrice);
             if (description != null) room.setRoomDescription(description);
-            if (imageUrl != null) room.setRoomPhotoUrl(imageUrl);
+
+            // Optional: set placeholder if photo is provided
+            if (photo != null && !photo.isEmpty()) {
+                room.setRoomPhotoUrl("https://via.placeholder.com/300");
+            }
 
             Room updatedRoom = roomRepository.save(room);
             RoomDTO roomDTO = Utils.mapRoomEntityToRoomDTO(updatedRoom);
