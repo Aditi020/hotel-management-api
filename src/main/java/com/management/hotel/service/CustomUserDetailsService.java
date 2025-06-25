@@ -2,7 +2,7 @@ package com.management.hotel.service;
 
 import com.management.hotel.exception.OurException;
 import com.management.hotel.repo.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
