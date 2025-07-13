@@ -1,0 +1,287 @@
+.dashboard {
+  padding: 32px 0;
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-primary);
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  padding: 24px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card.bookings {
+  background: linear-gradient(135deg, #66B2B2 0%, #4E9292 100%);
+  /* Aqua Green Gradient */
+  color: white;
+}
+
+.stat-card.revenue {
+  background: linear-gradient(135deg, #81C784 0%, #388E3C 100%);
+  /* Fresh Green Gradient */
+  color: white;
+}
+
+.stat-card.stays {
+  background: linear-gradient(135deg, #FFAB91 0%, #FF7043 100%);
+  /* Soft Coral Gradient */
+  color: white;
+}
+
+.stat-card.loyalty {
+  background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+  /* Purple Gradient */
+  color: white;
+}
+
+.stat-card.users {
+  background: linear-gradient(135deg, #64B5F6 0%, #1976D2 100%);
+  /* Light Blue Gradient */
+  color: white;
+}
+
+.stat-card.rooms {
+  background: linear-gradient(135deg, #FF7043 0%, #D32F2F 100%);
+  /* Warm Red Gradient */
+  color: white;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-title {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.quick-actions {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.action-card {
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+.action-card:hover {
+  border-color: #FF6B6B;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.2);
+}
+
+.action-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, #ffb36b 0%, #f2b35b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.action-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.action-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.recent-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.recent-card {
+  padding: 24px;
+  background: var(--bg-card);
+}
+
+.recent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.recent-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.recent-list {
+  list-style: none;
+}
+
+.recent-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recent-item:last-child {
+  border-bottom: none;
+}
+
+.recent-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.recent-info p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.recent-meta {
+  text-align: right;
+}
+
+.recent-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.recent-amount {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4ECDC4;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-confirmed {
+  background-color: #E8F5E8;
+  color: #2E7D32;
+}
+
+.status-pending {
+  background-color: #FFF3E0;
+  color: #F57C00;
+}
+
+.status-cancelled {
+  background-color: #FFEBEE;
+  color: #C62828;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px 0;
+  }
+  
+  .dashboard-title {
+    font-size: 28px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .recent-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .action-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
