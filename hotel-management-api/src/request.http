@@ -1,0 +1,464 @@
+# Hotel Management System - Frontend UI/UX Design Prompt
+Design a modern and user-friendly UI for a Hotel Management System. The system should allow admins and users to manage rooms, bookings, and profiles with a clean, professional interface. The UI should use a color scheme for uniqueness, avoiding the overuse of blue, with a focus on modern design principles and easy navigation. The system should be responsive, minimalistic, and easy to use on both desktop and mobile devices.
+
+## General Guidelines
+Design Style: Modern, clean, professional, user-friendly. Avoid using blue as the primary color.
+Color Scheme: Soft greens, warm neutrals, or other soothing colors.
+Responsiveness: Ensure the UI is fully responsive for both desktop and mobile devices.
+CSS Styling: All styles should be in separate CSS files, organized in a styles folder. Use plain CSS (no Tailwind or TypeScript).
+File Format: JSX files for React components.
+## 1. **Authentication Pages** ### 🔐 **Auth - Register**
+Route: POST /auth/register
+Design:
+Simple registration form with fields: Email, Password, Name, and Phone Number.
+Submit button to create a new user account.
+Option to navigate to the login page if already have an account.
+Styling: Clean and intuitive, with clear labels and placeholder text.
+### 🔐 **Auth - Login**
+Route: POST /auth/login
+Design:
+Login form with fields: Email and Password.
+Option for users to reset password.
+Button to login and navigate to the homepage or dashboard.
+Styling: Similar to the Register form for consistency.
+## 2. **Dashboard (Admin & User)** ### **Dashboard for Admin and User**
+Design:
+For Admin, display options like Manage Rooms, Manage Bookings, Manage Users, etc.
+For User, display options like My Bookings, Profile, etc.
+Key Sections:
+Welcome message with username.
+Quick summary of recent bookings (for User), recent rooms or bookings (for Admin).
+Navigation bar with links to Rooms, Bookings, Profile, Settings.
+Styling: Minimal and professional with clear, large cards and icons.
+## 3. **User Profile Page** ### 🧑 **User Profile**
+Route: GET /users/get-logged-in-profile-info
+Design:
+Display user information: Name, Email, Phone Number.
+Option to update the profile and change the password.
+Styling: Clean and organized layout with user-friendly fields.
+## 4. **Room Management Pages (Admin Only)** ### 🛏️ **Rooms - Add New Room**
+Route: POST /rooms/add
+Design:
+Admin can add new rooms with fields like Room Name, Room Type, Room Description, Price, and Room Images.
+Option to upload room images.
+Styling: Simple form layout with clear input fields and image upload functionality.
+### 🛏️ **Rooms - Update Room**
+Route: PUT /rooms/update/:id
+Design:
+Admin can update room details: Room Name, Room Type, Room Description, Price.
+Option to update room images.
+Styling: Clean form with easily editable fields.
+### 🛏️ **Rooms - Delete Room**
+Route: DELETE /rooms/delete/:id
+Design:
+Option for Admin to delete a room.
+Confirm delete action to prevent accidental deletion.
+Styling: Simple button with confirmation modal.
+### 🛏️ **Rooms - View All Rooms**
+Route: GET /rooms/all
+Design:
+Display list of all rooms with their details.
+Option to view individual room information.
+Styling: Grid or list view with icons for room type, price, and availability.
+## 5. **Booking Management Pages** ### 📦 **Bookings - Book a Room**
+Route: POST /bookings/book-room/:roomId/:userId
+Design:
+Form for users to select a Check-In and Check-Out date, number of guests (adults, children).
+Display total cost, room details, and booking confirmation button.
+Styling: Clear form layout with well-marked date pickers and a summary section for costs.
+### 📦 **Bookings - Get All Bookings (Admin)**
+Route: GET /bookings/all
+Design:
+Display all bookings for Admin with details: User Name, Room Type, Dates, Status.
+Option to view individual bookings or cancel them.
+Styling: Clean list view with icons and easy-to-read status indicators.
+### 📦 **Bookings - Cancel Booking**
+Route: DELETE /bookings/cancel/:id
+Design:
+Option for users to cancel a booking.
+Confirmation dialog before cancellation.
+Styling: Simple button with confirmation modal.
+### 📦 **Bookings - Get Booking by Confirmation Code**
+Route: GET /bookings/get-by-confirmation-code/:code
+Design:
+Users can view booking details by entering the confirmation code.
+Display Room, Dates, and Booking Status.
+Styling: Input field for confirmation code and a result card displaying booking details.
+### 📦 **Booking Confirmation Page**
+Design:
+Confirmation message and summary of booking details.
+Option to view or cancel the booking.
+Styling: Confirmation card with clear details and a prominent "Return to Dashboard" button.
+## 6. **Search & Filters** ### 🛏️ **Rooms - Search and Filter**
+Route: GET /rooms/available-rooms-by-date-and-type
+Design:
+Filter rooms based on Check-In Date, Check-Out Date, and Room Type.
+Display available rooms with their prices, features, and booking options.
+Styling: Filter bar at the top with room listings in a grid view below.
+## 7. **Admin User Management** ### 🧑 **Users - Get All Users**
+Route: GET /users/all
+Design:
+Admin can view all users with details: Name, Email, Phone Number.
+Option to view or delete users.
+Styling: List view with action buttons (view, delete).
+### 🧑 **Users - Get User by ID**
+Route: GET /users/get-by-id/:id
+Design:
+View detailed information of a specific user.
+Styling: Card view with editable user details.
+### 🧑 **Users - Delete User**
+Route: DELETE /users/delete/:id
+Design:
+Admin can delete users with a confirmation modal.
+Styling: Delete button with confirmation prompt.
+## 8. **Additional Pages** ### 📊 **Analytics and Reports (Admin Only)**
+Design:
+Admin can view overall hotel performance (e.g., number of bookings, revenue, room occupancy).
+Graphs showing room usage and revenue trends.
+Styling: Interactive charts and graphs using a modern UI library.
+### 🛠️ **Settings Page**
+Design:
+Users can update their personal settings, including password and notification preferences.
+Admin can manage hotel-wide settings such as pricing and room types.
+Styling: Clean form layout with toggles and input fields.
+--- ## Components to Include:
+Modals for confirmation actions (e.g., cancelling bookings, deleting users).
+Toasts or Notifications to show success or error messages after actions.
+Error Pages for handling 404 or 500 errors.
+Search Bar for searching rooms, users, and bookings.
+Date Pickers for booking check-in and check-out dates.
+--- ### Technical Notes:
+Framework: React (JSX files).
+Styling: Plain CSS (no Tailwind or TypeScript). Styles should be organized in a styles folder with each component having a dedicated .css file.
+Responsive Design: Ensure the app is fully responsive for mobile and desktop devices.
+Color Scheme: Avoid blue as the main color. Consider soft greens, warm neutrals, or other soothing colors.
+# Hotel Management System - Frontend UI/UX Design Prompt
+Design a modern and user-friendly UI for a Hotel Management System. The system should allow admins and users to manage rooms, bookings, and profiles with a clean, professional interface. The UI should use a non-blue color scheme for uniqueness, avoiding the overuse of blue, with a focus on modern design principles and easy navigation. The system should be responsive, minimalistic, and easy to use on both desktop and mobile devices.
+
+## General Guidelines
+Design Style: Modern, clean, professional, user-friendly. Avoid using blue as the primary color.
+Color Scheme: Soft greens, warm neutrals, or other soothing colors.
+Responsiveness: Ensure the UI is fully responsive for both desktop and mobile devices.
+CSS Styling: All styles should be in separate CSS files, organized in a styles folder. Use plain CSS (no Tailwind or TypeScript).
+File Format: JSX files for React components.
+## 1. **Authentication Pages** ### 🔐 **Auth - Register**
+Route: POST /auth/register
+Design:
+Simple registration form with fields: Email, Password, Name, and Phone Number.
+Submit button to create a new user account.
+Option to navigate to the login page if already have an account.
+Styling: Clean and intuitive, with clear labels and placeholder text.
+### 🔐 **Auth - Login**
+Route: POST /auth/login
+Design:
+Login form with fields: Email and Password.
+Option for users to reset password.
+Button to login and navigate to the homepage or dashboard.
+Styling: Similar to the Register form for consistency.
+## 2. **Dashboard (Admin & User)** ### **Dashboard for Admin and User**
+Design:
+For Admin, display options like Manage Rooms, Manage Bookings, Manage Users, etc.
+For User, display options like My Bookings, Profile, etc.
+Key Sections:
+Welcome message with username.
+Quick summary of recent bookings (for User), recent rooms or bookings (for Admin).
+Navigation bar with links to Rooms, Bookings, Profile, Settings.
+Styling: Minimal and professional with clear, large cards and icons.
+## 3. **User Profile Page** ### 🧑 **User Profile**
+Route: GET /users/get-logged-in-profile-info
+Design:
+Display user information: Name, Email, Phone Number.
+Option to update the profile and change the password.
+Styling: Clean and organized layout with user-friendly fields.
+## 4. **Room Management Pages (Admin Only)** ### 🛏️ **Rooms - Add New Room**
+Route: POST /rooms/add
+Design:
+Admin can add new rooms with fields like Room Name, Room Type, Room Description, Price, and Room Images.
+Option to upload room images.
+Styling: Simple form layout with clear input fields and image upload functionality.
+### 🛏️ **Rooms - Update Room**
+Route: PUT /rooms/update/:id
+Design:
+Admin can update room details: Room Name, Room Type, Room Description, Price.
+Option to update room images.
+Styling: Clean form with easily editable fields.
+### 🛏️ **Rooms - Delete Room**
+Route: DELETE /rooms/delete/:id
+Design:
+Option for Admin to delete a room.
+Confirm delete action to prevent accidental deletion.
+Styling: Simple button with confirmation modal.
+### 🛏️ **Rooms - View All Rooms**
+Route: GET /rooms/all
+Design:
+Display list of all rooms with their details.
+Option to view individual room information.
+Styling: Grid or list view with icons for room type, price, and availability.
+## 5. **Booking Management Pages** ### 📦 **Bookings - Book a Room**
+Route: POST /bookings/book-room/:roomId/:userId
+Design:
+Form for users to select a Check-In and Check-Out date, number of guests (adults, children).
+Display total cost, room details, and booking confirmation button.
+Styling: Clear form layout with well-marked date pickers and a summary section for costs.
+### 📦 **Bookings - Get All Bookings (Admin)**
+Route: GET /bookings/all
+Design:
+Display all bookings for Admin with details: User Name, Room Type, Dates, Status.
+Option to view individual bookings or cancel them.
+Styling: Clean list view with icons and easy-to-read status indicators.
+### 📦 **Bookings - Cancel Booking**
+Route: DELETE /bookings/cancel/:id
+Design:
+Option for users to cancel a booking.
+Confirmation dialog before cancellation.
+Styling: Simple button with confirmation modal.
+### 📦 **Bookings - Get Booking by Confirmation Code**
+Route: GET /bookings/get-by-confirmation-code/:code
+Design:
+Users can view booking details by entering the confirmation code.
+Display Room, Dates, and Booking Status.
+Styling: Input field for confirmation code and a result card displaying booking details.
+### 📦 **Booking Confirmation Page**
+Design:
+Confirmation message and summary of booking details.
+Option to view or cancel the booking.
+Styling: Confirmation card with clear details and a prominent "Return to Dashboard" button.
+## 6. **Search & Filters** ### 🛏️ **Rooms - Search and Filter**
+Route: GET /rooms/available-rooms-by-date-and-type
+Design:
+Filter rooms based on Check-In Date, Check-Out Date, and Room Type.
+Display available rooms with their prices, features, and booking options.
+Styling: Filter bar at the top with room listings in a grid view below.
+## 7. **Admin User Management** ### 🧑 **Users - Get All Users**
+Route: GET /users/all
+Design:
+Admin can view all users with details: Name, Email, Phone Number.
+Option to view or delete users.
+Styling: List view with action buttons (view, delete).
+### 🧑 **Users - Get User by ID**
+Route: GET /users/get-by-id/:id
+Design:
+View detailed information of a specific user.
+Styling: Card view with editable user details.
+### 🧑 **Users - Delete User**
+Route: DELETE /users/delete/:id
+Design:
+Admin can delete users with a confirmation modal.
+Styling: Delete button with confirmation prompt.
+## 8. **Additional Pages** ### 📊 **Analytics and Reports (Admin Only)**
+Design:
+Admin can view overall hotel performance (e.g., number of bookings, revenue, room occupancy).
+Graphs showing room usage and revenue trends.
+Styling: Interactive charts and graphs using a modern UI library.
+### 🛠️ **Settings Page**
+Design:
+Users can update their personal settings, including password and notification preferences.
+Admin can manage hotel-wide settings such as pricing and room types.
+Styling: Clean form layout with toggles and input fields.
+--- ## Components to Include:
+Modals for confirmation actions (e.g., cancelling bookings, deleting users).
+Toasts or Notifications to show success or error messages after actions.
+Error Pages for handling 404 or 500 errors.
+Search Bar for searching rooms, users, and bookings.
+Date Pickers for booking check-in and check-out dates.
+--- ### Technical Notes:
+Framework: React (JSX files).
+Styling: Plain CSS (no Tailwind or TypeScript). Styles should be organized in a styles folder with each component having a dedicated .css file.
+Responsive Design: Ensure the app is fully responsive for mobile and desktop devices.
+Color Scheme: Avoid blue as the main color. Consider soft greens, warm neutrals, or other soothing colors.
+# Hotel Management System - Frontend UI/UX Design Prompt
+Design a modern and user-friendly UI for a Hotel Management System. The system should allow admins and users to manage rooms, bookings, and profiles with a clean, professional interface. The UI should use a non-blue color scheme for uniqueness, avoiding the overuse of blue, with a focus on modern design principles and easy navigation. The system should be responsive, minimalistic, and easy to use on both desktop and mobile devices.
+
+## General Guidelines
+Design Style: Modern, clean, professional, user-friendly. Avoid using blue as the primary color.
+Color Scheme: Soft greens, warm neutrals, or other soothing colors.
+Responsiveness: Ensure the UI is fully responsive for both desktop and mobile devices.
+CSS Styling: All styles should be in separate CSS files, organized in a styles folder. Use plain CSS (no Tailwind or TypeScript).
+File Format: JSX files for React components.
+## 1. **Authentication Pages** ### 🔐 **Auth - Register**
+Route: POST /auth/register
+Design:
+Simple registration form with fields: Email, Password, Name, and Phone Number.
+Submit button to create a new user account.
+Option to navigate to the login page if already have an account.
+Styling: Clean and intuitive, with clear labels and placeholder text.
+### 🔐 **Auth - Login**
+Route: POST /auth/login
+Design:
+Login form with fields: Email and Password.
+Option for users to reset password.
+Button to login and navigate to the homepage or dashboard.
+Styling: Similar to the Register form for consistency.
+## 2. **Dashboard (Admin & User)** ### **Dashboard for Admin and User**
+Design:
+For Admin, display options like Manage Rooms, Manage Bookings, Manage Users, etc.
+For User, display options like My Bookings, Profile, etc.
+Key Sections:
+Welcome message with username.
+Quick summary of recent bookings (for User), recent rooms or bookings (for Admin).
+Navigation bar with links to Rooms, Bookings, Profile, Settings.
+Styling: Minimal and professional with clear, large cards and icons.
+## 3. **User Profile Page** ### 🧑 **User Profile**
+Route: GET /users/get-logged-in-profile-info
+Design:
+Display user information: Name, Email, Phone Number.
+Option to update the profile and change the password.
+Styling: Clean and organized layout with user-friendly fields.
+## 4. **Room Management Pages (Admin Only)** ### 🛏️ **Rooms - Add New Room**
+Route: POST /rooms/add
+Design:
+Admin can add new rooms with fields like Room Name, Room Type, Room Description, Price, and Room Images.
+Option to upload room images.
+Styling: Simple form layout with clear input fields and image upload functionality.
+### 🛏️ **Rooms - Update Room**
+Route: PUT /rooms/update/:id
+Design:
+Admin can update room details: Room Name, Room Type, Room Description, Price.
+Option to update room images.
+Styling: Clean form with easily editable fields.
+### 🛏️ **Rooms - Delete Room**
+Route: DELETE /rooms/delete/:id
+Design:
+Option for Admin to delete a room.
+Confirm delete action to prevent accidental deletion.
+Styling: Simple button with confirmation modal.
+### 🛏️ **Rooms - View All Rooms**
+Route: GET /rooms/all
+Design:
+Display list of all rooms with their details.
+Option to view individual room information.
+Styling: Grid or list view with icons for room type, price, and availability.
+## 5. **Booking Management Pages** ### 📦 **Bookings - Book a Room**
+Route: POST /bookings/book-room/:roomId/:userId
+Design:
+Form for users to select a Check-In and Check-Out date, number of guests (adults, children).
+Display total cost, room details, and booking confirmation button.
+Styling: Clear form layout with well-marked date pickers and a summary section for costs.
+### 📦 **Bookings - Get All Bookings (Admin)**
+Route: GET /bookings/all
+Design:
+Display all bookings for Admin with details: User Name, Room Type, Dates, Status.
+Option to view individual bookings or cancel them.
+Styling: Clean list view with icons and easy-to-read status indicators.
+### 📦 **Bookings - Cancel Booking**
+Route: DELETE /bookings/cancel/:id
+Design:
+Option for users to cancel a booking.
+Confirmation dialog before cancellation.
+Styling: Simple button with confirmation modal.
+### 📦 **Bookings - Get Booking by Confirmation Code**
+Route: GET /bookings/get-by-confirmation-code/:code
+Design:
+Users can view booking details by entering the confirmation code.
+Display Room, Dates, and Booking Status.
+Styling: Input field for confirmation code and a result card displaying booking details.
+### 📦 **Booking Confirmation Page**
+Design:
+Confirmation message and summary of booking details.
+Option to view or cancel the booking.
+Styling: Confirmation card with clear details and a prominent "Return to Dashboard" button.
+## 6. **Search & Filters** ### 🛏️ **Rooms - Search and Filter**
+Route: GET /rooms/available-rooms-by-date-and-type
+Design:
+Filter rooms based on Check-In Date, Check-Out Date, and Room Type.
+Display available rooms with their prices, features, and booking options.
+Styling: Filter bar at the top with room listings in a grid view below.
+## 7. **Admin User Management** ### 🧑 **Users - Get All Users**
+Route: GET /users/all
+Design:
+Admin can view all users with details: Name, Email, Phone Number.
+Option to view or delete users.
+Styling: List view with action buttons (view, delete).
+### 🧑 **Users - Get User by ID**
+Route: GET /users/get-by-id/:id
+Design:
+View detailed information of a specific user.
+Styling: Card view with editable user details.
+### 🧑 **Users - Delete User**
+Route: DELETE /users/delete/:id
+Design:
+Admin can delete users with a confirmation modal.
+Styling: Delete button with confirmation prompt.
+## 8. **Additional Pages** ### 📊 **Analytics and Reports (Admin Only)**
+Design:
+Admin can view overall hotel performance (e.g., number of bookings, revenue, room occupancy).
+Graphs showing room usage and revenue trends.
+Styling: Interactive charts and graphs using a modern UI library.
+### 🛠️ **Settings Page**
+Design:
+Users can update their personal settings, including password and notification preferences.
+Admin can manage hotel-wide settings such as pricing and room types.
+Styling: Clean form layout with toggles and input fields.
+--- ## Components to Include:
+Modals for confirmation actions (e.g., cancelling bookings, deleting users).
+Toasts or Notifications to show success or error messages after actions.
+Error Pages for handling 404 or 500 errors.
+Search Bar for searching rooms, users, and bookings.
+Date Pickers for booking check-in and check-out dates.
+--- ### Technical Notes:
+Framework: React (JSX files).
+Styling: Plain CSS (no Tailwind or TypeScript). Styles should be organized in a styles folder with each component having a dedicated .css file.
+Responsive Design: Ensure the app is fully responsive for mobile and desktop devices.
+Color Scheme: Avoid blue as the main color. Consider soft greens, warm neutrals, or other soothing colors.
+Code Requirements Code Format: JSX (React) format for front-end components.
+CSS Styling: Styling should be kept in separate CSS files, organized in a style/ folder, with each component's styling contained in its own .css file (e.g., Home.css, Login.css, Dashboard.css).
+
+No Tailwind: Avoid using Tailwind CSS, and no TypeScript.
+
+
+Based on your requirements, I'll create a comprehensive Hotel Management System with a modern, clean design using soft greens and warm neutrals. The system will be fully responsive and feature all the components you specified.
+
+Core Features:
+
+Complete authentication system with login and registration
+Dual dashboard interface for admins and users
+Full room management with CRUD operations for admins
+Comprehensive booking system with date selection and confirmation
+User profile management and admin user oversight
+Advanced search and filtering capabilities
+Analytics dashboard with performance metrics
+Settings management for users and admins
+Design Elements:
+
+Modern card-based layouts with subtle shadows and smooth transitions
+Clean typography with proper hierarchy and readable contrast ratios
+Mobile-first responsive design with breakpoints for all devices
+Professional spacing using consistent 8px grid system
+Intuitive navigation with clear visual feedback
+✅ Complete Conversion Summary:
+File Format Changes:
+All .tsx files converted to .jsx
+All .ts files converted to .js
+Updated main.jsx and all component imports
+Removed all TypeScript type annotations
+Styling Approach:
+100% Plain CSS - No Tailwind classes used anywhere
+All styles organized in separate CSS files in the styles/ folder
+Each component has its own dedicated CSS file
+Modern CSS with custom properties, flexbox, and grid
+
+Key Features Implemented:
+Authentication System - Login/Register with demo accounts
+Dual Dashboard - Different interfaces for admin vs users
+Room Management - Full CRUD operations for admins
+Booking System - Complete reservation workflow
+User Management - Admin can view/manage all users
+Analytics Dashboard - Performance metrics and charts
+Settings Panel - Comprehensive user preferences
+Search & Filters - Advanced filtering capabilities
+Responsive Design - Mobile-first approach
+Professional UI - Clean, modern design with smooth animations
+Demo Access:
+Admin: Use admin@hotel.com with any password
+User: Use any other email with any password
+
+write a readme.md file mentioning about the project in detail, and also mention the functionality it possess, every page details, and anything you find important. provide this seperately, no need to write in code
+
+also, I do not liek the green color, make use of shades of cream color, creme, or bright colors,
+
+the application is not responsive,and i want you to makt the Hotel management system for User interface mainly. so
+add a footer that matches the application too.
+
+make the application modern and stylish and user friendly. use some sort of lightweight pattern if and only if you think would be nice
+reminding the application is User based application, with minor changes to switch to admin application based on logging user or admin.
+
