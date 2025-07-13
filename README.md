@@ -2,6 +2,9 @@
 
 A modern, responsive Hotel Management System (HMS) built with React.js and plain CSS. This system is designed for hotel admins and regular users to manage bookings, rooms, profiles, and analytics. It features a dark mode toggle, color-coded dashboard cards, and improved navigation.
 
+![Application Screenshot](/HMS.png)
+
+
 ## Key Features
 
 - **User Authentication**
