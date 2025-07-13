@@ -11,7 +11,7 @@
 .dashboard-title {
   font-size: 36px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #373434;
   margin-bottom: 8px;
 }
 
@@ -283,5 +283,111 @@
   .action-icon {
     width: 48px;
     height: 48px;
+  }
+}
+
+/* Dashboard.css */
+
+/* Main image section with two columns */
+/* Main image section with two columns */
+.main-image-section {
+  margin: 10px 0;
+  border: none;
+  margin-bottom: 30px;
+  /* Add margin to the section */
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: white;
+  border: 0.5px solid #ddd;
+  padding: 20px;
+  border-radius: 20px;
+  /* Optional: Add rounded corners */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+/* Left Column (Text) */
+.left-column {
+  flex: 1;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  text-align: center;
+  /* Align text in the center */
+  max-width: 50%;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Right Column (Image) */
+.right-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* Horizontally center the image */
+  align-items: center;
+  /* Vertically center the image */
+  max-width: 50%;
+}
+
+.main-image {
+  width: 70%;
+  /* Image takes 70% of the width of the right column */
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: contain;
+  /* Ensure image is contained within the box */
+  /* Optional: Add rounded corners */
+  border-radius: 8px;
+}
+
+/* Make the image and text responsive for smaller screens */
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+    /* Stack text and image vertically */
+    text-align: center;
+    /* Center-align the content */
+  }
+
+  .left-column {
+    max-width: 100%;
+    margin-bottom: 20px;
+    /* Add space between text and image */
+  }
+
+  .right-column {
+    max-width: 100%;
+  }
+
+  .main-image {
+    width: 90%;
+    /* Image takes 90% of the column width on smaller screens */
+  }
+
+  .section-title {
+    font-size: 24px;
+    /* Reduce font size for smaller screens */
+  }
+
+  .section-description {
+    font-size: 14px;
+    /* Reduce font size for smaller screens */
   }
 }

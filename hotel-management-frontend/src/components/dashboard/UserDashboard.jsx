@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, CreditCard, User, Settings, Bed, Clock, MapPin } from 'lucide-react';
 import { fetchBookings } from '../../data/mockData';
+import MainImg from '../dashboard/HMain.jpg';
 import '../../styles/Dashboard.css';
 
 const UserDashboard = ({ user }) => {
@@ -71,10 +72,31 @@ const UserDashboard = ({ user }) => {
   return (
     <div className="dashboard">
       <div className="container">
-        <div className="dashboard-header">
-          <h1 className="dashboard-title">Welcome back, {user.name}!</h1>
-          <p className="dashboard-subtitle">Manage your bookings and explore our hotel services.</p>
+       
+        {/* Main Image Section - Left Text and Right Illustration */}
+        <div className="main-image-section">
+          <div className="image-container">
+            {/* Left Column (Text) */}
+            <div className="left-column">
+              <div className="dashboard-header" >
+                <h1 className="dashboard-title" >Welcome back, {user.name}!</h1></div>
+                <p className="section-description">Manage your bookings and explore our hotel services.</p>
+              <p className="section-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              </p>
+            </div>
+
+            {/* Right Column (Image) */}
+            <div className="right-column">
+              <img
+                src={MainImg}
+                alt="Hotel Booking Illustration"
+                className="main-image"
+              />
+            </div>
+          </div>
         </div>
+
 
         {/* Stats Grid */}
         <div className="stats-grid">
